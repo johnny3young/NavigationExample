@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.kikopalomares.navigationexample.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_redFragment"
+            app:destination="@+id/redFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_greenFragment"
+            app:destination="@id/greenFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/redFragment"
+        android:name="com.kikopalomares.navigationexample.RedFragment"
+        android:label="fragment_red"
+        tools:layout="@layout/fragment_red" />
+    <fragment
+        android:id="@+id/greenFragment"
+        android:name="com.kikopalomares.navigationexample.GreenFragment"
+        android:label="fragment_green"
+        tools:layout="@layout/fragment_green" >
+        <action
+            android:id="@+id/action_greenFragment_to_textFragment"
+            app:destination="@id/textFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/textFragment"
+        android:name="com.kikopalomares.navigationexample.TextFragment"
+        android:label="fragment_text"
+        tools:layout="@layout/fragment_text" >
+
+        <argument
+            android:name="text"
+            android:defaultValue=" "
+            app:argType="string" />
+
+    </fragment>
+</navigation>
